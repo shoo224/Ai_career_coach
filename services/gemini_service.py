@@ -4,8 +4,7 @@ responsible for communicating with gemini api
 
 from google import genai
 from config import config
-
-import google.genai as genai
+from typing import Any, Optional
 
 class GeminiService:
     def __init__(self):
@@ -17,14 +16,15 @@ class GeminiService:
 
         self.model = config.MODEL_NAME
 
-    def generate_response(self, prompt):
+    def generate_response(self, prompt:str, generation_config: Optional[Any] = None) -> Any:
         try:
             response = self.client.models.generate_content(
                 model=self.model,
-                contents=prompt
+                contents=prompt,
+                config = generation_config
             )
 
-            return response.text
+            return response
 
         except Exception as e:
             return f"Error generating response: {str(e)}"
