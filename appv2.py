@@ -9,8 +9,6 @@ from agents.research_agent import ResearchAgent
 from agents.reviewer_agent import ReviewerAgent
 from agents.writer_agent import WriterAgent
 
-from orchestrator.agent_orchestrator import AgentOrchestrator
-
 from memory.shared_memory import SharedMemory
 from services.gemini_service import GeminiService
 
@@ -37,13 +35,19 @@ def main() -> None:
     writer = WriterAgent(memory , gemini_service)
     reviewer = ReviewerAgent(memory , gemini_service)
 
-    orchestrator = AgentOrchestrator(memory)
-    orchestrator.register(planner)
-    orchestrator.register(researcher)
-    orchestrator.register(writer)
-    orchestrator.register(reviewer)
+    print("\n Planning career Roadmap")
+    planner.execute()
 
-    final_response = orchestrator.execute()
+    print("\n Researching latest technologies")
+    researcher.execute()
+
+    print("\n Writing professional roadmap")
+    writer.execute()
+
+    print("\n Reviewing final roadmap...")
+    reviewer.execute()
+
+    final_response = memory.get("reviewer")
 
     print("="*60)
     print("FINAL ROADMAP")
