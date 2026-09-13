@@ -4,6 +4,7 @@ from memory.shared_memory import SharedMemory
 import config
 from google import genai
 from models.agent_response import AgentResponse
+from memory.conversation_memory import ConversationMemory
 
 class BaseAgent(ABC):
     """
@@ -17,10 +18,11 @@ class BaseAgent(ABC):
 
     """
 
-    def __init__(self , memory:SharedMemory, gemini_service: GeminiService) :
+    def __init__(self , memory:SharedMemory, gemini_service: GeminiService, conversation_memory: ConversationMemory) :
         super().__init__()
         self.memory = memory
         self.gemini = gemini_service
+        self.conversation_memory = conversation_memory
 
     @abstractmethod
     def get_agent_name(self) -> str:
@@ -46,13 +48,24 @@ class BaseAgent(ABC):
         build prompt -> call gemini -> create agentresponse -> store in sharedmemory
         -> return response
         """
-        prompt = self.build_prompt()
+        agent_prompt = self.build_prompt()
+        conversation = self.conversation_memory.get_context()
+        prompt = f"""
+
+        Conversation History:
+        ------------------------
+        {conversation}
+
+        Current Task:
+        ------------------------
+        {agent_prompt}
+        """
         gemini_response = self.gemini.generate_response(prompt)
         agent_response = AgentResponse(
             agent_name = self.get_agent_name(),
             output = gemini_response.text
         )
-
+        self.conversation_memory.add_ai_message(gemini_response.text)
         self.memory.add(
             self.get_memory_key(),
             agent_response

@@ -4,12 +4,13 @@ mainly responsible for managing the execution of ai agents.
 from typing import List
 from agents.base_agent import BaseAgent
 from memory.shared_memory import SharedMemory
+from memory.conversation_memory import ConversationMemory
 
 
 class AgentOrchestrator:
     # executes AI agents in sequence.
 
-    def __init__(self , memory : SharedMemory):
+    def __init__(self , memory : SharedMemory , conversation_memory : ConversationMemory):
 
         self.memory = memory
         self.agents : List[BaseAgent] = []

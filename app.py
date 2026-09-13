@@ -13,42 +13,55 @@ from orchestrator.agent_orchestrator import AgentOrchestrator
 
 from memory.shared_memory import SharedMemory
 from services.gemini_service import GeminiService
+from memory.conversation_memory import ConversationMemory
+
 
 def main() -> None:
-    print("="*70)
-    print("AI CAREER COACH")
-    print("="*70)
-
-    user_query = input("Enter your career goal : \n")
-
-    # Initialised shared components
-
-    memory = SharedMemory()
     gemini_service = GeminiService()
+    conversation_memory = ConversationMemory()
+    while True:
+        print("="*70)
+        print("AI CAREER COACH")
+        print("="*70)
 
-    # Store the user query
+        user_query = input("Enter your career goal : \n")
 
-    memory.add("user_query",user_query)
+        if user_query.lower() == "exit" or user_query.lower() == "bye":
+            break
+        
 
-    #create agents
+        conversation_memory.add_user_message(user_query)
 
-    planner = PlannerAgent(memory , gemini_service)
-    researcher = ResearchAgent(memory , gemini_service)
-    writer = WriterAgent(memory , gemini_service)
-    reviewer = ReviewerAgent(memory , gemini_service)
+        # Initialised shared components
 
-    orchestrator = AgentOrchestrator(memory)
-    orchestrator.register(planner)
-    orchestrator.register(researcher)
-    orchestrator.register(writer)
-    orchestrator.register(reviewer)
+        memory = SharedMemory()
+        
 
-    final_response = orchestrator.execute()
+        # Store the user query
 
-    print("="*60)
-    print("FINAL ROADMAP")
-    print("="*60)
-    print(final_response.output)
+        memory.add("user_query",user_query)
+
+        #create agents
+
+        planner = PlannerAgent(memory , gemini_service , conversation_memory)
+        researcher = ResearchAgent(memory , gemini_service , conversation_memory)
+        writer = WriterAgent(memory , gemini_service , conversation_memory)
+        reviewer = ReviewerAgent(memory , gemini_service , conversation_memory)
+
+        orchestrator = AgentOrchestrator(memory , conversation_memory)
+        orchestrator.register(planner)
+        orchestrator.register(researcher)
+        orchestrator.register(writer)
+        orchestrator.register(reviewer)
+
+        conversation_memory.display()
+
+        final_response = orchestrator.execute()
+
+        print("="*60)
+        print("FINAL ROADMAP")
+        print("="*60)
+        print(final_response.output)
 
 if __name__ == '__main__':
     main()
