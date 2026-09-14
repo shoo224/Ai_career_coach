@@ -1,0 +1,253 @@
+{
+    "ai_engineer": {
+        "skills": [
+            "Python",
+            "Machine Learning",
+            "Deep Learning",
+            "Gen AI",
+            "Agentic AI",
+            "RAG",
+            "MCP"
+        ],
+        "certifications": [
+            "AI-102",
+            "Google-GenAI"
+        ],
+        "projects": [
+            "AI Career Coach",
+            "Resume Analyzer",
+            "Interview Assistant"
+        ]
+    },
+
+    "ml_engineer": {
+        "skills": [
+            "Python",
+            "Machine Learning",
+            "Deep Learning",
+            "Scikit-Learn",
+            "TensorFlow",
+            "PyTorch",
+            "Feature Engineering"
+        ],
+        "certifications": [
+            "AWS Machine Learning",
+            "Google Professional ML Engineer"
+        ],
+        "projects": [
+            "Customer Churn Prediction",
+            "House Price Prediction",
+            "Fraud Detection System"
+        ]
+    },
+
+    "data_scientist": {
+        "skills": [
+            "Python",
+            "Statistics",
+            "Machine Learning",
+            "Pandas",
+            "NumPy",
+            "Data Visualization",
+            "SQL"
+        ],
+        "certifications": [
+            "IBM Data Science",
+            "Google Data Analytics"
+        ],
+        "projects": [
+            "Sales Prediction",
+            "Customer Segmentation",
+            "Business Intelligence Dashboard"
+        ]
+    },
+
+    "genai_engineer": {
+        "skills": [
+            "Python",
+            "LLMs",
+            "Prompt Engineering",
+            "RAG",
+            "LangChain",
+            "Vector Databases",
+            "Fine-Tuning"
+        ],
+        "certifications": [
+            "Google-GenAI",
+            "Microsoft Azure AI Engineer"
+        ],
+        "projects": [
+            "Document Q&A System",
+            "AI Content Generator",
+            "Enterprise Knowledge Assistant"
+        ]
+    },
+
+    "ai_agent_developer": {
+        "skills": [
+            "Python",
+            "LLMs",
+            "Agentic AI",
+            "Tool Calling",
+            "LangGraph",
+            "MCP",
+            "Multi-Agent Systems"
+        ],
+        "certifications": [
+            "Google-GenAI",
+            "AI-102"
+        ],
+        "projects": [
+            "Multi-Agent Research Assistant",
+            "AI Travel Planner",
+            "Autonomous Task Manager"
+        ]
+    },
+
+    "rag_engineer": {
+        "skills": [
+            "Python",
+            "RAG",
+            "Embeddings",
+            "Vector Databases",
+            "FAISS",
+            "ChromaDB",
+            "LLMs"
+        ],
+        "certifications": [
+            "Google-GenAI",
+            "AWS Generative AI"
+        ],
+        "projects": [
+            "PDF Question Answering System",
+            "Legal Document Assistant",
+            "Research Paper Assistant"
+        ]
+    },
+
+    "deep_learning_engineer": {
+        "skills": [
+            "Python",
+            "Deep Learning",
+            "PyTorch",
+            "TensorFlow",
+            "CNN",
+            "RNN",
+            "Transformers"
+        ],
+        "certifications": [
+            "TensorFlow Developer",
+            "NVIDIA Deep Learning"
+        ],
+        "projects": [
+            "Image Classification System",
+            "Object Detection System",
+            "Medical Image Classifier"
+        ]
+    },
+
+    "nlp_engineer": {
+        "skills": [
+            "Python",
+            "NLP",
+            "Transformers",
+            "BERT",
+            "Text Classification",
+            "Sentiment Analysis",
+            "Hugging Face"
+        ],
+        "certifications": [
+            "Hugging Face NLP",
+            "Google-GenAI"
+        ],
+        "projects": [
+            "Sentiment Analysis System",
+            "Spam Detection System",
+            "Text Summarization Tool"
+        ]
+    },
+
+    "computer_vision_engineer": {
+        "skills": [
+            "Python",
+            "Computer Vision",
+            "OpenCV",
+            "PyTorch",
+            "CNN",
+            "Object Detection",
+            "Image Segmentation"
+        ],
+        "certifications": [
+            "NVIDIA Computer Vision",
+            "TensorFlow Developer"
+        ],
+        "projects": [
+            "Face Recognition System",
+            "Traffic Sign Detection",
+            "Object Tracking System"
+        ]
+    },
+
+    "llm_engineer": {
+        "skills": [
+            "Python",
+            "LLMs",
+            "Prompt Engineering",
+            "Fine-Tuning",
+            "Transformers",
+            "Hugging Face",
+            "LLM Evaluation"
+        ],
+        "certifications": [
+            "Google-GenAI",
+            "AWS Generative AI"
+        ],
+        "projects": [
+            "Custom LLM Chatbot",
+            "Domain-Specific LLM",
+            "AI Code Assistant"
+        ]
+    },
+
+    "aiops_engineer": {
+        "skills": [
+            "Python",
+            "MLOps",
+            "Docker",
+            "Kubernetes",
+            "MLflow",
+            "CI/CD",
+            "Model Monitoring"
+        ],
+        "certifications": [
+            "AWS Machine Learning",
+            "Azure AI Engineer"
+        ],
+        "projects": [
+            "ML Deployment Pipeline",
+            "Model Monitoring System",
+            "Automated ML Training Pipeline"
+        ]
+    },
+
+    "cloud_ai_engineer": {
+        "skills": [
+            "Python",
+            "Cloud Computing",
+            "AWS",
+            "Azure",
+            "Google Cloud",
+            "Docker",
+            "AI Deployment"
+        ],
+        "certifications": [
+            "AWS AI Practitioner",
+            "Azure AI Engineer"
+        ],
+        "projects": [
+            "Cloud-Based AI API",
+            "Scalable RAG Application",
+            "Serverless AI Assistant"
+        ]
+    }
+}
